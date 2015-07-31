@@ -12,6 +12,14 @@ public class Company {
 		this.code = code;
 		this.description = description;
 	}
+	
+	public Company(long id, String name, String code, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.code = code;
+		this.description = description;
+	}
 
 	public String getName() {
 		return name;
@@ -37,6 +45,22 @@ public class Company {
 		this.description = description;
 	}
 	
+	public void persist(){
+		
+	}
+
+	@Override
+	public String toString() {
+		return "[Company name:" + name + "], [Company description:" + description + "]";
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 	
 	
 }
