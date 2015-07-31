@@ -40,12 +40,9 @@ public class Main {
 					deleteContact(oraclePhoneBook, bufferedReader);
 					break;
 				case "5":
-					try{
+					
 					createContact(oraclePhoneBook, bufferedReader);
-				}catch(IllegalArgumentException e){
-					e.printStackTrace();
-					throw new IllegalArgumentException("Invalid Date Format");
-				}
+			
 					break;
 				case "6":
 					updateContact(oraclePhoneBook, bufferedReader);
@@ -57,7 +54,6 @@ public class Main {
 					break;
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
@@ -168,7 +164,12 @@ public class Main {
 			return;
 		}
 		if(!birthday.isEmpty()){
+		try{	
 			birthdate = new Date(birthday);
+		}catch(IllegalArgumentException e){
+			e.printStackTrace();
+			throw new IllegalArgumentException("Invalid Date Format");
+		}
 		}
 		if(!isVip.isEmpty()){
 			if(isVip.equals("true")||isVip.equals("false")){

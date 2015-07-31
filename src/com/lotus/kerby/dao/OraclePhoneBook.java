@@ -259,7 +259,7 @@ public class OraclePhoneBook implements PhoneBook{
 			}else{
 			birthday =  new Date(contact.getBirthday().getTime());
 			}
-			statement.setDate(2, birthday);
+			statement.setObject(2, birthday);
 			statement.setBoolean(3, contact.isVIP());
 			
 			statement.setObject(4, contact.getCompanyID());

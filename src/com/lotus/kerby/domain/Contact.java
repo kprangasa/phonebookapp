@@ -2,6 +2,8 @@ package com.lotus.kerby.domain;
 
 import java.util.Date;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 public class Contact {
 	private long id;
 	private String name;
@@ -32,7 +34,7 @@ public class Contact {
 				+ "], [Contact Number:" + contactNumber + "]";
 	}
 	
-
+	@JsonIgnore
 	public long getId() {
 		return id;
 	}
